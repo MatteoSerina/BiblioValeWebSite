@@ -1,0 +1,5 @@
+IMPORTARE UN DUMP DEL DATABASE:1) Importare il dump del backup presente su Dropbox2) Importare l'ultimo dump ricevuto all'indirizzo: 'sturmtruppen89@libero.it'3) Creare la vista 'tutti_libri' eseguendo la seguente query:	select `libri`.`id` AS `id`,`libri`.`titolo` AS `titolo`,`autori`.`nome` AS `nome`,`autori`.`cognome` AS `cognome`,`generi`.`nome` AS `genere`,`libri`.`anno` AS `anno`,`libri`.`stato` AS `stato`,`libri`.`gradimento` AS `gradimento`,`libri`.`note` AS `note` from ((`libri` left join `autori` on((`autori`.`id` = `libri`.`id_autore`))) left join `generi` on((`generi`.`id` = `libri`.`id_genere`)));
+---------------------
+HOSTINGER.IT
+	username: sturmtruppen89@libero.it
+	password: Sturm89
