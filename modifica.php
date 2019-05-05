@@ -48,7 +48,7 @@
                 $sql = "SELECT * FROM `tutti_libri` WHERE `id`=$id_lib";
                 $result = database::qSelect($conn, $sql);
                 $libro = array();
-                while($record = mysql_fetch_array($result)){
+                while($record = mysqli_fetch_array($result)){
                     extract($record);      
                 }
                 //eseguo la query per l'estrazione di tutti gli autori
@@ -57,7 +57,7 @@
                 //eseguo la query per l'estrazione di tutti i generi
                 $sqlGEN = "SELECT * FROM `generi`";
                 $resultGEN = database::qSelect($conn, $sqlGEN);
-                mysql_close();
+                database::dbClose($conn);
                 ?>   
                 <br>  
                 <table>               
@@ -68,7 +68,7 @@
                     <select name="autore" >
                         <option value="<?php echo $cognome." - ".$nome?>" selected="selected"><?php echo $cognome." - ".$nome?>  </option>
                         <?php
-                            while($newAut = mysql_fetch_array($resultAUT)){
+                            while($newAut = mysqli_fetch_array($resultAUT)){
                                 $newName = $newAut['nome'];
                                 $newSurname = $newAut['cognome'];
                                 echo "<option value=\"$newSurname - $newName\"> $newSurname - $newName</option>";
@@ -81,7 +81,7 @@
                         <select name="genere" >
                         <option value="<?php echo $genere?>" selected="selected"><?php echo $genere?>  </option>
                         <?php
-                            while($newGen = mysql_fetch_array($resultGEN)){
+                            while($newGen = mysqli_fetch_array($resultGEN)){
                                 $newGenre = $newGen['nome'];
                                 echo "<option value=\"$newGenre\"> $newGenre</option>";
                             }                            

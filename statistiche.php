@@ -50,19 +50,19 @@
 					
 					//calcolo il numero di record				
 					$sql = "SELECT * FROM `tutti_libri`";
-					$tot_libri = mysql_num_rows(database::qSelect($conn, $sql));
+					$tot_libri = mysqli_num_rows(database::qSelect($conn, $sql));
 					$sql = "SELECT * FROM `tutti_libri` WHERE `stato` = \"letto\"";
-					$letti = mysql_num_rows(database::qSelect($conn, $sql));
+					$letti = mysqli_num_rows(database::qSelect($conn, $sql));
 					$sql = "SELECT * FROM `tutti_libri` WHERE `stato` = \"non letto\"";
-					$non_letti = mysql_num_rows(database::qSelect($conn, $sql));
+					$non_letti = mysqli_num_rows(database::qSelect($conn, $sql));
 					$sql = "SELECT * FROM `tutti_libri` WHERE `stato` = \"in lettura\"";
-					$in_lettura = mysql_num_rows(database::qSelect($conn, $sql));
+					$in_lettura = mysqli_num_rows(database::qSelect($conn, $sql));
 					$sql = "SELECT * FROM `tutti_libri` WHERE `stato` = \"da consultazione\"";
-					$consultazione = mysql_num_rows(database::qSelect($conn, $sql));
+					$consultazione = mysqli_num_rows(database::qSelect($conn, $sql));
 					$sql = "SELECT * FROM `tutti_libri` WHERE `stato` = \"abbandonato\"";
-					$abbandonati = mysql_num_rows(database::qSelect($conn, $sql));
+					$abbandonati = mysqli_num_rows(database::qSelect($conn, $sql));
 					$sql = "SELECT * FROM `tutti_libri` WHERE `stato` = \"wish list\"";
-					$wish_list = mysql_num_rows(database::qSelect($conn, $sql));
+					$wish_list = mysqli_num_rows(database::qSelect($conn, $sql));
 					$libri_posseduti = $tot_libri - $wish_list;
 					//scrivo la tabella con le statistiche
 					echo "
@@ -90,7 +90,7 @@
 							</tr>
 						</table>";
 					
-					mysql_close();
+					database::dbClose($conn);
                 ?>				
 				</div>
 			</div>

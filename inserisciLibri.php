@@ -50,7 +50,7 @@
                 //eseguo la query per l'estrazione di tutti i generi
                 $sqlGEN = "SELECT `id`, `nome` FROM `generi` ORDER BY `nome`";
                 $resultGEN = database::qSelect($conn, $sqlGEN);
-                mysql_close();
+                database::dbClose($conn);
                 ?>   
                 <br>  
                 <table>               
@@ -60,7 +60,7 @@
                     <td>    
                     <select name="autore" >
                         <?php
-                            while($newAut = mysql_fetch_array($resultAUT)){
+                            while($newAut = mysqli_fetch_array($resultAUT)){
                                 $newName = $newAut['nome'];
                                 $newSurname = $newAut['cognome'];
                                 echo "<option value=\"$newSurname - $newName\"> $newSurname - $newName</option>";
@@ -72,7 +72,7 @@
                     <td>
                         <select name="genere" >
                         <?php
-                            while($newGen = mysql_fetch_array($resultGEN)){
+                            while($newGen = mysqli_fetch_array($resultGEN)){
                                 $newGenre = $newGen['nome'];
                                 echo "<option value=\"$newGenre\"> $newGenre</option>";
                             }                            

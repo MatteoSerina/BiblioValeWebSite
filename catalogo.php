@@ -58,12 +58,12 @@
                 //eseguo la query di ricerca
                 $sql = "SELECT * FROM `tutti_libri` ORDER BY `titolo` LIMIT $offset, $rowsPerPage";
                 $result = database::qSelect($conn, $sql);
-                if(mysql_num_rows($result)==0){
+                if(mysqli_num_rows($result)==0){
                     echo "<h4>Nessun risultato!</h4>";
                 }
                 else{
                     echo "<div align='center'><table id='myTable' class='tablesorter'><thead><tr><th>Titolo</th><th>Cognome</th><th>Nome</th><th>Stato</th></tr></thead><tbody>";
-                    while($record = mysql_fetch_array($result)){
+                    while($record = mysqli_fetch_array($result)){
                         extract($record);
                         $html_row = "<tr onclick=\"document.location = 'modifica.php?id=$id';\">
                                     <td>$titolo</td>
@@ -82,7 +82,7 @@
                 //calcolo il numero di record				
                 $sql = "SELECT * FROM `tutti_libri`";
                 $result = database::qSelect($conn, $sql);
-                $numrows = mysql_num_rows($result);
+                $numrows = mysqli_num_rows($result);
                 echo "Totale libri: $numrows<br><br>";				
                 //quante pagine sono?
                 $maxPage = ceil($numrows/$rowsPerPage);
@@ -133,7 +133,7 @@
                 echo $first . $prev . "&nbsp;Vai alla pagina: " . $nav . $next . $last;
                 
                 
-                mysql_close();
+                database::dbClose($conn);
                 ?>
                 </div>
                 <br>

@@ -65,12 +65,12 @@
                             $sqlAUT = "SELECT `id`, `cognome`, `nome` FROM `autori` ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)";
                             $resultAUT = database::qSelect($conn, $sqlAUT);
                             $list = array();
-                            while($recordAUT = mysql_fetch_array($resultAUT)){
+                            while($recordAUT = mysqli_fetch_array($resultAUT)){
                                 extract($recordAUT);
                                 echo "<option value=\"$cognome - $nome\">$cognome - $nome</option>";
                                 $list[$cognome." - ".$nome] = $id;
                             }                            
-                            mysql_close();
+                            database::dbClose($conn);
                             ?>
                         </select>   
                         </td>
@@ -104,13 +104,13 @@
                     
 					//verifico che non esista già l'autore che si sta per inserire
 					$sqlCheck = "SELECT * FROM `autori` WHERE `nome` = \"$nome\" AND `cognome` = \"$cognome\"";
-					$occorrenzeAutore = mysql_num_rows(database::qSelect($conn, $sqlCheck));
+					$occorrenzeAutore = mysqli_num_rows(database::qSelect($conn, $sqlCheck));
 					
 					if($occorrenzeAutore==0){					
 	                    //eseguo la query per l'inserimento dell'autore
 	                    $sqlInsert = "INSERT INTO `autori`(`cognome`, `nome`) VALUES ('$cognome','$nome')";
 	                    database::qInsertInto($conn, $sqlInsert);
-	                    mysql_close();
+	                    database::dbClose($conn);
 	                    
 	                    header("Location:inserisciAutori.php?insert=OK");
 					}

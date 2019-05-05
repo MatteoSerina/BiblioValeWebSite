@@ -35,8 +35,8 @@
                 //recupero la password
                 $sql = "SELECT `password` FROM `utenti` WHERE `username`=\"$username\"";
                 $result = database::qSelect($conn, $sql);
-                $record = mysql_fetch_array($result);
-                mysql_close();
+                $record = mysqli_fetch_array($result);
+                database::dbClose($conn);
                 $dbPsw = $record['password'];
                 //verifico matching tra la password inserita e quella salvata nel database
                 //e se è giusta attivo la sessione, altrimenti scrivo che il login è fallito

@@ -48,12 +48,12 @@
                 //eseguo la query di ricerca
                 $sql = "SELECT * FROM `tutti_libri` WHERE `stato` = \"wish list\"";
                 $result = database::qSelect($conn, $sql);
-                if(mysql_num_rows($result)==0){
+                if(mysqli_num_rows($result)==0){
                     echo "<h4>Nessun risultato!</h4>";
                 }
                 else{
                     echo "<div align='center'><table id='myTable' class='tablesorter'><thead><tr><th>Titolo</th><th>Cognome</th><th>Nome</th><th>Genere</th></tr></thead><tbody>";
-                    while($record = mysql_fetch_array($result)){
+                    while($record = mysqli_fetch_array($result)){
                         extract($record);
                         $html_row = "<tr onclick=\"document.location = 'modifica.php?id=$id';\">
                                     <td>$titolo</td>
@@ -64,10 +64,10 @@
                         echo $html_row;
                     }
                     echo "</tbody></table></div>";
-                    $numrecords = mysql_num_rows($result);
+                    $numrecords = mysqli_num_rows($result);
                     echo "<p align='center'>Totale libri: $numrecords</p><br>";
                 }
-                mysql_close();
+                database::dbClose($conn);
                 ?>
         </div>      
         </div>      

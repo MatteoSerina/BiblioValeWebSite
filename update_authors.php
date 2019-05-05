@@ -12,8 +12,8 @@
                                   
     //recupero parametri inseriti nella form               
     $id = html_entity_decode($_POST['id_aut']);
-    $cognome = mysql_real_escape_string(html_entity_decode($_POST['nuovoCognome']));
-    $nome = mysql_real_escape_string(html_entity_decode($_POST['nuovoNome'])); 
+    $cognome = mysql_real_escape_string(html_entity_decode($conn, $_POST['nuovoCognome']));
+    $nome = mysql_real_escape_string(html_entity_decode($conn, $_POST['nuovoNome'])); 
     
     //eseguo le query di aggiornamento                
     

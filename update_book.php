@@ -18,28 +18,29 @@ $conn = database::dbConnect();
                            
 //recupero parametri inseriti nella form
 if(isset($_POST['id']))
-    $id_lib = mysql_real_escape_string(html_entity_decode($_POST['id']));
-$titolo = mysql_real_escape_string(html_entity_decode($_POST['titolo']));
-$autore = mysql_real_escape_string(html_entity_decode($_POST['autore'])); //da esplodere con ' - '
-$genere = mysql_real_escape_string(html_entity_decode($_POST['genere']));
-$anno = mysql_real_escape_string(html_entity_decode($_POST['anno']));
-$stato = mysql_real_escape_string(html_entity_decode($_POST['stato']));
-$gradimento = mysql_real_escape_string(html_entity_decode($_POST['gradimento']));
-$note = mysql_real_escape_string(html_entity_decode($_POST['note']));                
+    $id_lib = mysqli_real_escape_string($conn, html_entity_decode($_POST['id']));
+$titolo = mysqli_real_escape_string($conn, html_entity_decode($_POST['titolo']));
+$autore = mysqli_real_escape_string($conn, html_entity_decode($_POST['autore'])); //da esplodere con ' - '
+$genere = mysqli_real_escape_string($conn, html_entity_decode($_POST['genere']));
+$anno = mysqli_real_escape_string($conn, html_entity_decode($_POST['anno']));
+$stato = mysqli_real_escape_string($conn, html_entity_decode($_POST['stato']));
+$gradimento = mysqli_real_escape_string($conn, html_entity_decode($_POST['gradimento']));
+$note = mysqli_real_escape_string($conn, html_entity_decode($_POST['note']));                
 $autV = explode(" - ",$autore);
 
+//logger::appendRowToFile("TITOLO: " . mysqli_real_escape_string($conn, html_entity_decode($_POST['titolo'])));
 
 //eseguo le query di aggiornamento
 
 //recupero id autore            
 $sqlAUT = "SELECT * FROM `autori` WHERE `cognome` = '".trim($autV[0])."' AND `nome` = '".trim($autV[1])."'";
 $resultAUT = database::qSelect($conn, $sqlAUT);
-$recordAUT = mysql_fetch_assoc($resultAUT);
+$recordAUT = mysqli_fetch_assoc($resultAUT);
 $id_aut = $recordAUT['id'];
 //recupero id genere                
 $sqlGEN = "SELECT id FROM generi WHERE nome = \"$genere\"";
 $resultGEN = database::qSelect($conn, $sqlGEN);
-$recordGEN = mysql_fetch_assoc($resultGEN);
+$recordGEN = mysqli_fetch_assoc($resultGEN);
 $id_gen = $recordGEN['id'];
 
 if(isset($_POST['id'])){	
@@ -55,7 +56,7 @@ else{
 	$nome = trim($autV[1]);
 	$cognome = trim($autV[0]);
 	$sqlCheck = "SELECT * FROM `tutti_libri` WHERE `nome` = \"$nome\" AND `cognome` = \"$cognome\" AND `titolo` = \"$titolo\"";
-	$occorrenzeLibro = mysql_num_rows(database::qSelect($conn, $sqlCheck));
+	$occorrenzeLibro = mysqli_num_rows(database::qSelect($conn, $sqlCheck));
 	
 	if($occorrenzeLibro==0){
 	    //Inserisco il libro

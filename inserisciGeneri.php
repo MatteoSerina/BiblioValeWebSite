@@ -63,12 +63,12 @@
                                 $sqlAUT = "SELECT `id`, `nome` FROM `generi` ORDER BY `nome`";
                                 $resultAUT = database::qSelect($conn, $sqlAUT);
                                 $list = array();
-                                while($recordAUT = mysql_fetch_array($resultAUT)){
+                                while($recordAUT = mysqli_fetch_array($resultAUT)){
                                     extract($recordAUT);
                                     echo "<option value=\"$nome\">$nome</option>";
                                     $list[$nome] = $id;
                                 }                            
-                                mysql_close();
+                                database::dbClose($conn);
                                 ?>
                             </select>   
                         </td>
@@ -100,18 +100,18 @@
                     
                     //verifico che non esista già il genere che si sta per inserire
 					$sqlCheck = "SELECT * FROM `generi` WHERE `nome` = \"$genere\"";
-					$occorrenzeGenere = mysql_num_rows(database::qSelect($conn, $sqlCheck));
+					$occorrenzeGenere = mysqli_num_rows(database::qSelect($conn, $sqlCheck));
 					
 					if($occorrenzeGenere==0){
 	                    //eseguo la query per l'inserimento del genere
 	                    $sqlInsert = "INSERT INTO `generi`(`nome`) VALUES ('$genere')";
 	                    database::qInsertInto($conn, $sqlInsert);
-	                    mysql_close();
+	                    database::dbClose($conn);
 	                    
 	                    header("Location:inserisciGeneri.php?insert=OK");
 					}
 					else{
-						mysql_close();	                    
+						database::dbClose($conn);	                    
 	                	header("Location:inserisciGeneri.php?insert=$occorrenzeGenere");
 					}                  
                 }

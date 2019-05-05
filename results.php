@@ -53,12 +53,12 @@
                 //eseguo la query di ricerca
                 $sql = "SELECT * FROM `tutti_libri` WHERE `titolo` LIKE \"%$title%\" AND `cognome` LIKE \"%$surname%\" AND `nome` LIKE \"%$name%\"";
                 $result = database::qSelect($conn, $sql);
-                if(mysql_num_rows($result)==0){
+                if(mysqli_num_rows($result)==0){
                     echo "<h4>Nessun risultato!</h4>";
                 }
                 else{
                     echo "<div align='center'><table id='myTable' class='tablesorter'><thead><tr><th>Titolo</th><th>Cognome</th><th>Nome</th><th>Stato</th></tr></thead><tbody>";
-                    while($record = mysql_fetch_array($result)){
+                    while($record = mysqli_fetch_array($result)){
                         extract($record);
                         $html_row = "<tr onclick=\"document.location = 'modifica.php?id=$id';\">
                                     <td>$titolo</td>
@@ -70,7 +70,7 @@
                     }
                     echo "</tbody></table></div>";
                 }
-                mysql_close();
+                database::dbClose($conn);
                 ?>
         </div>      
         </div>      

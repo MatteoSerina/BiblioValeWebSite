@@ -23,7 +23,7 @@ $conn = database::dbConnect();
                              
 //recupero parametri inseriti nella form               
 $id = html_entity_decode($_POST['id_gen']);
-$genere = mysql_real_escape_string(html_entity_decode($_POST['nomeGenere']));
+$genere = mysqli_real_escape_string($conn, html_entity_decode($_POST['nomeGenere']));
 
 //eseguo le query di aggiornamento                
 
