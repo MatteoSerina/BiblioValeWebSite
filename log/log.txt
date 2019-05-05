@@ -1,0 +1,67 @@
+2019-05-05 09:22:19pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:22:19pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:23:42pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:23:42pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:23:51pm - SELECT * FROM `autori` WHERE `cognome` = '' AND `nome` = ''
+2019-05-05 09:23:51pm - SELECT id FROM generi WHERE nome = ""
+2019-05-05 09:23:51pm - SELECT * FROM `tutti_libri` WHERE `nome` = "" AND `cognome` = "" AND `titolo` = ""
+2019-05-05 09:23:51pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`) VALUES ('','','','','','','')
+2019-05-05 09:23:51pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:23:51pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:27:49pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:27:49pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:28:35pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:28:35pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:28:37pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:28:37pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:28:39pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:28:39pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:28:51pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:28:51pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:28:53pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:28:53pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:28:56pm - TITOLO: 
+2019-05-05 09:28:56pm - SELECT * FROM `autori` WHERE `cognome` = '' AND `nome` = ''
+2019-05-05 09:28:56pm - SELECT id FROM generi WHERE nome = ""
+2019-05-05 09:28:56pm - SELECT * FROM `tutti_libri` WHERE `nome` = "" AND `cognome` = "" AND `titolo` = ""
+2019-05-05 09:28:57pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`) VALUES ('','','','','','','')
+2019-05-05 09:28:57pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:28:57pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:31:42pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:31:42pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:31:45pm - TITOLO: LibroTest
+2019-05-05 09:31:45pm - SELECT * FROM `autori` WHERE `cognome` = '' AND `nome` = ''
+2019-05-05 09:31:45pm - SELECT id FROM generi WHERE nome = ""
+2019-05-05 09:31:45pm - SELECT * FROM `tutti_libri` WHERE `nome` = "" AND `cognome` = "" AND `titolo` = ""
+2019-05-05 09:31:45pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`) VALUES ('','','','','','','')
+2019-05-05 09:31:45pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:31:45pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:32:43pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:32:43pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:32:46pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:32:46pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:32:50pm - TITOLO: LibroTest
+2019-05-05 09:32:50pm - SELECT * FROM `autori` WHERE `cognome` = '' AND `nome` = ''
+2019-05-05 09:32:50pm - SELECT id FROM generi WHERE nome = ""
+2019-05-05 09:32:50pm - SELECT * FROM `tutti_libri` WHERE `nome` = "" AND `cognome` = "" AND `titolo` = ""
+2019-05-05 09:32:50pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`) VALUES ('','','','','','','')
+2019-05-05 09:32:50pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:32:50pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:33:14pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:33:14pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:33:17pm - TITOLO: 
+2019-05-05 09:33:17pm - SELECT * FROM `autori` WHERE `cognome` = '' AND `nome` = ''
+2019-05-05 09:33:17pm - SELECT id FROM generi WHERE nome = ""
+2019-05-05 09:33:17pm - SELECT * FROM `tutti_libri` WHERE `nome` = "" AND `cognome` = "" AND `titolo` = ""
+2019-05-05 09:33:17pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`) VALUES ('','','','','','','')
+2019-05-05 09:33:17pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:33:17pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:35:17pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:35:17pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2019-05-05 09:35:20pm - TITOLO: LibroTest
+2019-05-05 09:35:20pm - SELECT * FROM `autori` WHERE `cognome` = '' AND `nome` = ''
+2019-05-05 09:35:20pm - SELECT id FROM generi WHERE nome = ""
+2019-05-05 09:35:20pm - SELECT * FROM `tutti_libri` WHERE `nome` = "" AND `cognome` = "" AND `titolo` = ""
+2019-05-05 09:35:20pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`) VALUES ('','','','','','','')
+2019-05-05 09:35:20pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
+2019-05-05 09:35:20pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
