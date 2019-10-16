@@ -454,7 +454,7 @@ function createBook($_json = true){
 	$sqlInsert = "INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`, `ISBN_10`, `ISBN_13`) VALUES (\"$title\", \"$id_aut\", \"$id_gen\", \"$year\", \"$status\", \"$liking\", \"$notes\", \"$isbn_10\", \"$isbn_13\")";
 	$res = insertHelper($sqlInsert);
 	
-	if($res == 0){
+	if($res == 1){
 		if($_json){
 			$response = array("status_id" => 0, "status_desc" => "New book created");
 			echo json_encode($response);
@@ -546,7 +546,7 @@ function updateBook($_json = true){
     . "	`id` = \"$id\"";
 	$res = updateHelper($sqlUpdate);
 	
-	if($res == 0){
+	if($res == 1){
 		if($_json){
 			$response = array("status_id" => $OK, "status_desc" => "Book updated");
 			echo json_encode($response);
