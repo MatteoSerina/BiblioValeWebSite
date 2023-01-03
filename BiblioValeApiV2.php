@@ -512,7 +512,7 @@ function createBook($_json = true){
 	$name = filter_input(INPUT_GET, 'name');
 	$year = filter_input(INPUT_GET, 'year');
 	$status = filter_input(INPUT_GET, 'status');
-	$liking = filter_input(INPUT_GET, 'liking');
+	$liking = (filter_input(INPUT_GET, 'liking') == '') ? 0 : filter_input(INPUT_GET, 'liking');
 	$isbn_10 = filter_input(INPUT_GET, 'isbn_10');
 	$isbn_13 = filter_input(INPUT_GET, 'isbn_13');
 	$notes = filter_input(INPUT_GET, 'notes');	
@@ -527,7 +527,7 @@ function createBook($_json = true){
 			echo "Fill all mandatory parameters!";
 		}
 		return;
-	}
+	}	
 	
 	//Verifico esistenza autore
 	$auts = getAuthors($surname, $name, false);	
@@ -573,7 +573,7 @@ function createBook($_json = true){
 		return;
 	}
 	
-	//Aggiungo il libro
+	//Aggiungo il libro	
 	$sqlInsert = "INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`, `ISBN_10`, `ISBN_13`) VALUES (\"$title\", \"$id_aut\", \"$id_gen\", \"$year\", \"$status\", \"$liking\", \"$notes\", \"$isbn_10\", \"$isbn_13\")";
 	$res = insertHelper($sqlInsert);
 	
@@ -773,7 +773,7 @@ function getBooksByStatus($_status='', $_json = true){
 	else{		
 		while($record = mysqli_fetch_array($result)){
 			extract($record);
-			$book = array("id" => $id, "title" => $titolo, "surname" => $cognome, "name" =>  $nome, "year" => $anno, "genre" => $genere, "isbn_10" => $isbn_10, "isbn_13" => $isbn_13, "status" => $stato, "notes" => $note);
+			$book = array("id" => $id, "title" => $titolo, "surname" => $cognome, "name" =>  $nome, "year" => $anno, "genre" => $genere, "isbn10" => $isbn_10, "isbn13" => $isbn_13, "status" => $stato, "notes" => $note);
 			$book_list[] =$book;			
 		}
 	}

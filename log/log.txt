@@ -65,3 +65,72 @@
 2019-05-05 09:35:20pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`) VALUES ('','','','','','','')
 2019-05-05 09:35:20pm - SELECT `id`, `nome`, `cognome` FROM `autori` ORDER BY `cognome`
 2019-05-05 09:35:20pm - SELECT `id`, `nome` FROM `generi` ORDER BY `nome`
+2023-01-03 01:49:10pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 01:49:16pm - SELECT `stato`, count(*) AS 'count' FROM `tutti_libri` group by `stato`
+2023-01-03 01:49:16pm - SELECT count(*) AS 'count' FROM `tutti_libri` where `stato` <> 'wish list'
+2023-01-03 01:49:44pm - SELECT * FROM `tutti_libri` where `stato` = "Abbandonato" ORDER BY `cognome`, `nome`, `titolo`
+2023-01-03 01:49:50pm - SELECT `stato`, count(*) AS 'count' FROM `tutti_libri` group by `stato`
+2023-01-03 01:49:50pm - SELECT count(*) AS 'count' FROM `tutti_libri` where `stato` <> 'wish list'
+2023-01-03 01:49:53pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 01:49:57pm - SELECT * FROM generi ORDER BY nome
+2023-01-03 01:49:57pm - SELECT CONCAT(`cognome`, ", ", `nome`) as AuthorsHint FROM `autori` ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 01:50:19pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 01:50:19pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 01:50:19pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Test%" AND `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" AND `isbn_10` LIKE "%%" AND `isbn_13` LIKE "%%" ORDER BY `cognome`, `nome`, `titolo`
+2023-01-03 01:50:19pm - SELECT id FROM generi WHERE nome = "Avventura"
+2023-01-03 01:50:19pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`, `ISBN_10`, `ISBN_13`) VALUES ("Test", "307", "3", "2023", "Non letto", "", "", "", "")
+2023-01-03 01:52:05pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 01:52:05pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 01:52:05pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Test%" AND `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" AND `isbn_10` LIKE "%%" AND `isbn_13` LIKE "%%" ORDER BY `cognome`, `nome`, `titolo`
+2023-01-03 01:52:05pm - SELECT id FROM generi WHERE nome = "Avventura"
+2023-01-03 01:52:05pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`, `ISBN_10`, `ISBN_13`) VALUES ("Test", "307", "3", "2023", "Non letto", "", "", "", "")
+2023-01-03 01:52:33pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 01:52:34pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 01:52:34pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Test%" AND `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" AND `isbn_10` LIKE "%%" AND `isbn_13` LIKE "%%" ORDER BY `cognome`, `nome`, `titolo`
+2023-01-03 01:52:34pm - SELECT id FROM generi WHERE nome = "Avventura"
+2023-01-03 01:52:34pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`, `ISBN_10`, `ISBN_13`) VALUES ("Test", "307", "3", "2023", "Non letto", "", "", "", "")
+2023-01-03 02:01:46pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 02:01:50pm - SELECT `stato`, count(*) AS 'count' FROM `tutti_libri` group by `stato`
+2023-01-03 02:01:50pm - SELECT count(*) AS 'count' FROM `tutti_libri` where `stato` <> 'wish list'
+2023-01-03 02:06:05pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 02:06:06pm - SELECT `stato`, count(*) AS 'count' FROM `tutti_libri` group by `stato`
+2023-01-03 02:06:06pm - SELECT count(*) AS 'count' FROM `tutti_libri` where `stato` <> 'wish list'
+2023-01-03 02:06:16pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 02:06:17pm - SELECT * FROM generi ORDER BY nome
+2023-01-03 02:06:17pm - SELECT CONCAT(`cognome`, ", ", `nome`) as AuthorsHint FROM `autori` ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:06:31pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:06:31pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:06:31pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Test%" AND `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" AND `isbn_10` LIKE "%%" AND `isbn_13` LIKE "%%" ORDER BY `cognome`, `nome`, `titolo`
+2023-01-03 02:06:31pm - SELECT id FROM generi WHERE nome = "Avventura"
+2023-01-03 02:06:31pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`, `ISBN_10`, `ISBN_13`) VALUES ("Test", "307", "3", "2023", "Non letto", , "", "", "")
+2023-01-03 02:09:35pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 02:09:36pm - SELECT `stato`, count(*) AS 'count' FROM `tutti_libri` group by `stato`
+2023-01-03 02:09:36pm - SELECT count(*) AS 'count' FROM `tutti_libri` where `stato` <> 'wish list'
+2023-01-03 02:09:43pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 02:09:45pm - SELECT * FROM generi ORDER BY nome
+2023-01-03 02:09:45pm - SELECT CONCAT(`cognome`, ", ", `nome`) as AuthorsHint FROM `autori` ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:09:58pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:09:58pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:09:58pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Test %" AND `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" AND `isbn_10` LIKE "%%" AND `isbn_13` LIKE "%%" ORDER BY `cognome`, `nome`, `titolo`
+2023-01-03 02:09:58pm - SELECT id FROM generi WHERE nome = "Avventura"
+2023-01-03 02:09:58pm - INSERT INTO `libri`(`titolo`, `id_autore`, `id_genere`, `anno`, `stato`, `gradimento`, `note`, `ISBN_10`, `ISBN_13`) VALUES ("Test ", "307", "3", "2022", "Non letto", "0", "", "", "")
+2023-01-03 02:09:58pm - SELECT CONCAT(`cognome`, ", ", `nome`) as SearchHint FROM `autori` UNION SELECT titolo from libri ORDER BY SearchHint
+2023-01-03 02:10:24pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Abe, Yaro%" OR `cognome` LIKE "%Abe, Yaro%" OR `nome` LIKE "%Abe, Yaro%" OR `autore` LIKE "%Abe, Yaro%" ORDER BY `cognome`, `nome`, SORTTITLE(titolo)
+2023-01-03 02:10:31pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:10:31pm - SELECT `id`, `cognome`, `nome` FROM `autori` WHERE `cognome` LIKE "%Abe%" AND `nome` LIKE "%Yaro%" ORDER BY CONVERT(CAST(`cognome` AS BINARY) USING utf8)
+2023-01-03 02:10:31pm - SELECT id FROM generi WHERE nome = "Avventura"
+2023-01-03 02:10:31pm - UPDATE 
+	`libri` 
+SET 
+	`titolo` = "Test ", 
+	`id_autore` = "307", 
+	`id_genere` = "3", 
+	`anno` = "2022", 
+	`stato` = "In lettura", 
+	`note` = "", 
+	`ISBN_10` = "", 
+	`ISBN_13` = "" 
+WHERE 
+	`id` = "856"
+2023-01-03 02:10:31pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Abe, Yaro%" OR `cognome` LIKE "%Abe, Yaro%" OR `nome` LIKE "%Abe, Yaro%" OR `autore` LIKE "%Abe, Yaro%" ORDER BY `cognome`, `nome`, SORTTITLE(titolo)
+2023-01-03 02:11:01pm - SELECT * FROM `tutti_libri` WHERE `titolo` LIKE "%Abe, Yaro%" OR `cognome` LIKE "%Abe, Yaro%" OR `nome` LIKE "%Abe, Yaro%" OR `autore` LIKE "%Abe, Yaro%" ORDER BY `cognome`, `nome`, SORTTITLE(titolo)
