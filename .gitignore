@@ -1,0 +1,4 @@
+backups/*
+log/*
+log/log.txt
+php_errors.log
