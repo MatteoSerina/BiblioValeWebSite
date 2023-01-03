@@ -66,7 +66,7 @@ include 'logger.php';
             mysqli_query($conn, $sql)
                 or die("Errore nell'esecuzione della query di aggiornamento: " . mysqli_error($conn));
             //valore di ritorno in caso di corretto funzionamento
-            return 1;
+            return 0;
         }
         
         /*
@@ -80,7 +80,7 @@ include 'logger.php';
             mysqli_query($conn, $sql)
                 or die("Errore nell'esecuzione della query di accodamento: " . mysqli_error($conn));
             //valore di ritorno in caso di corretto funzionamento
-            return 1;
+            return 0;
         }
         
         /*
@@ -91,7 +91,7 @@ include 'logger.php';
             mysqli_query($conn, $sql)
                 or die("Errore nell'esecuzione della query di eliminazione: " . mysqli_error($conn));
             //valore di ritorno in caso di corretto funzionamento
-            return 1;
+            return 0;
         }
         
         /*
