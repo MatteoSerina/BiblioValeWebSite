@@ -510,7 +510,7 @@ function createBook($_json = true){
 	$genre = filter_input(INPUT_GET, 'genre');
 	$surname = filter_input(INPUT_GET, 'surname');
 	$name = filter_input(INPUT_GET, 'name');
-	$year = filter_input(INPUT_GET, 'year');
+	$year = (filter_input(INPUT_GET, 'year') == '') ? 0 : filter_input(INPUT_GET, 'year');
 	$status = filter_input(INPUT_GET, 'status');
 	$liking = (filter_input(INPUT_GET, 'liking') == '') ? 0 : filter_input(INPUT_GET, 'liking');
 	$isbn_10 = filter_input(INPUT_GET, 'isbn_10');
@@ -609,9 +609,9 @@ function updateBook($_json = true){
 	$genre = filter_input(INPUT_GET, 'genre');
 	$surname = filter_input(INPUT_GET, 'surname');
 	$name = filter_input(INPUT_GET, 'name');
-	$year = filter_input(INPUT_GET, 'year');
+	$year = (filter_input(INPUT_GET, 'year') == '') ? 0 : filter_input(INPUT_GET, 'year');
 	$status = filter_input(INPUT_GET, 'status');
-	$liking = filter_input(INPUT_GET, 'liking');
+	$liking = (filter_input(INPUT_GET, 'liking') == '') ? 0 : filter_input(INPUT_GET, 'liking');
 	$isbn_10 = filter_input(INPUT_GET, 'isbn_10');
 	$isbn_13 = filter_input(INPUT_GET, 'isbn_13');
 	$notes = filter_input(INPUT_GET, 'notes');	
